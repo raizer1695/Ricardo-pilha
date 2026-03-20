@@ -13,17 +13,14 @@ Estática
         this.topo = -1; // Pilha começa vazia
     }
 
-    // Verifica se a pilha está vazia
     public boolean estaVazia() {
         return topo == -1;
     }
 
-    // Verifica se a pilha está cheia
     public boolean estaCheia() {
         return topo == capacidade - 1;
     }
 
-    // Adiciona um elemento no topo
     public void empilhar(int valor) {
         if (estaCheia()) {
             System.out.println("Erro: Pilha cheia!");
@@ -32,7 +29,6 @@ Estática
         dados[++topo] = valor;
     }
 
-    // Remove o elemento do topo
     public int desempilhar() {
         if (estaVazia()) {
             System.out.println("Erro: Pilha vazia!");
@@ -41,7 +37,6 @@ Estática
         return dados[topo--];
     }
 
-    // Retorna o elemento do topo sem remover
     public int topo() {
         if (estaVazia()) {
             System.out.println("Pilha vazia!");
@@ -50,23 +45,19 @@ Estática
         return dados[topo];
     }
 
-    // Mostra todos os elementos da pilha
     public void mostrar() {
         for (int i = topo; i >= 0; i--) {
             System.out.println(dados[i]);
         }
     }
-        // Retorna a quantidade de elementos
         public int tamanho() {
             return topo + 1;
         }
 
-        // Remove todos os elementos da pilha
         public void limpar() {
             topo = -1;
         }
 
-        // Verifica se um valor existe na pilha
         public boolean contem(int valor) {
             for (int i = 0; i <= topo; i++) {
                 if (dados[i] == valor) {
@@ -87,24 +78,20 @@ Dinâmica
         this.proximo = null;
     }}
     
-    // Referência do topo da pilha
     
     class PilhaDinamica {
     private No topo;
 
-    // Verifica se a pilha está vazia
     public boolean estaVazia() {
         return topo == null;
     }
 
-    // Adiciona um elemento no topo
     public void empilhar(int valor) {
         No novo = new No(valor);
         novo.proximo = topo;
         topo = novo;
     }
 
-    // Remove o elemento do topo
     public int desempilhar() {
         if (estaVazia()) {
             System.out.println("Erro: Pilha vazia!");
@@ -115,7 +102,6 @@ Dinâmica
         return valor;
     }
 
-    // Retorna o elemento do topo
     public int topo() {
         if (estaVazia()) {
             System.out.println("Pilha vazia!");
@@ -124,7 +110,6 @@ Dinâmica
         return topo.valor;
     }
 
-    // Mostra os elementos da pilha
     public void mostrar() {
         No atual = topo;
         while (atual != null) {
@@ -132,7 +117,6 @@ Dinâmica
             atual = atual.proximo;
         }
     }
-        // Retorna a quantidade de elementos
         public int tamanho() {
             int contador = 0;
             No atual = topo;
@@ -145,12 +129,10 @@ Dinâmica
             return contador;
         }
 
-        // Remove todos os elementos da pilha
         public void limpar() {
             topo = null;
         }
 
-        // Verifica se um valor existe na pilha
         public boolean contem(int valor) {
             No atual = topo;
 
@@ -169,7 +151,6 @@ Dinâmica
     public class Main {
     public static void main(String[] args) {
 
-        // Teste da pilha estática
         System.out.println("=== PILHA ESTÁTICA ===");
         PilhaEstatica pilha = new PilhaEstatica(5);
 
